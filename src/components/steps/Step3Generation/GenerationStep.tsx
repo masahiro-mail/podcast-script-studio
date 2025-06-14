@@ -69,7 +69,7 @@ const GenerationStep: React.FC = () => {
       
       {/* コンテンツタブ */}
       <ContentTabs>
-        {(activeTab: ContentField, setActiveTab) => (
+        {(activeTab: ContentField, _setActiveTab) => (
           <ContentEditor
             field={activeTab}
             value={generatedContent[activeTab]}

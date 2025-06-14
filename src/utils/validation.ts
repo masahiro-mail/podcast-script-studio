@@ -70,7 +70,7 @@ export const validateCharacterSettings = (settings: CharacterSettings): Validati
     ValidationUtils.maxLength(settings.characterName, 50, 'キャラクター名'),
     ValidationUtils.noXSS(settings.characterName, 'キャラクター名'),
     ValidationUtils.noSQLInjection(settings.characterName, 'キャラクター名')
-  ].filter(Boolean);
+  ].filter((error): error is ValidationError => error !== null);
   errors.push(...nameErrors);
   
   // 口調・話し方
@@ -80,7 +80,7 @@ export const validateCharacterSettings = (settings: CharacterSettings): Validati
     ValidationUtils.maxLength(settings.persona, 500, '口調・話し方'),
     ValidationUtils.noXSS(settings.persona, '口調・話し方'),
     ValidationUtils.noSQLInjection(settings.persona, '口調・話し方')
-  ].filter(Boolean);
+  ].filter((error): error is ValidationError => error !== null);
   errors.push(...personaErrors);
   
   // 性格
@@ -90,7 +90,7 @@ export const validateCharacterSettings = (settings: CharacterSettings): Validati
     ValidationUtils.maxLength(settings.personality, 200, '性格'),
     ValidationUtils.noXSS(settings.personality, '性格'),
     ValidationUtils.noSQLInjection(settings.personality, '性格')
-  ].filter(Boolean);
+  ].filter((error): error is ValidationError => error !== null);
   errors.push(...personalityErrors);
   
   // 専門分野
@@ -100,7 +100,7 @@ export const validateCharacterSettings = (settings: CharacterSettings): Validati
     ValidationUtils.maxLength(settings.expertise, 200, '専門分野'),
     ValidationUtils.noXSS(settings.expertise, '専門分野'),
     ValidationUtils.noSQLInjection(settings.expertise, '専門分野')
-  ].filter(Boolean);
+  ].filter((error): error is ValidationError => error !== null);
   errors.push(...expertiseErrors);
   
   // ターゲット視聴者
@@ -110,7 +110,7 @@ export const validateCharacterSettings = (settings: CharacterSettings): Validati
     ValidationUtils.maxLength(settings.targetAudience, 300, 'ターゲット視聴者'),
     ValidationUtils.noXSS(settings.targetAudience, 'ターゲット視聴者'),
     ValidationUtils.noSQLInjection(settings.targetAudience, 'ターゲット視聴者')
-  ].filter(Boolean);
+  ].filter((error): error is ValidationError => error !== null);
   errors.push(...audienceErrors);
   
   // オープニングスクリプト（任意項目）
@@ -119,7 +119,7 @@ export const validateCharacterSettings = (settings: CharacterSettings): Validati
       ValidationUtils.maxLength(settings.openingScript, 500, 'オープニングスクリプト'),
       ValidationUtils.noXSS(settings.openingScript, 'オープニングスクリプト'),
       ValidationUtils.noSQLInjection(settings.openingScript, 'オープニングスクリプト')
-    ].filter(Boolean);
+    ].filter((error): error is ValidationError => error !== null);
     errors.push(...openingErrors);
   }
   
@@ -129,7 +129,7 @@ export const validateCharacterSettings = (settings: CharacterSettings): Validati
       ValidationUtils.maxLength(settings.closingScript, 500, 'エンディングスクリプト'),
       ValidationUtils.noXSS(settings.closingScript, 'エンディングスクリプト'),
       ValidationUtils.noSQLInjection(settings.closingScript, 'エンディングスクリプト')
-    ].filter(Boolean);
+    ].filter((error): error is ValidationError => error !== null);
     errors.push(...closingErrors);
   }
   
@@ -146,7 +146,7 @@ export const validateTheme = (theme: string): ValidationError[] => {
     ValidationUtils.maxLength(theme, 50, 'テーマ'),
     ValidationUtils.noXSS(theme, 'テーマ'),
     ValidationUtils.noSQLInjection(theme, 'テーマ')
-  ].filter(Boolean);
+  ].filter((error): error is ValidationError => error !== null);
   
   errors.push(...themeErrors);
   return errors;

@@ -53,14 +53,14 @@ export class APIError extends Error {
   }
 }
 
-export class ValidationError extends Error {
+export class APIValidationError extends Error {
   constructor(
     message: string,
     public field: string,
     public value?: any
   ) {
     super(message);
-    this.name = 'ValidationError';
+    this.name = 'APIValidationError';
   }
 }
 

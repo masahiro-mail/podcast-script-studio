@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast Script Studio - Basic Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            max-width: 800px; 
+            margin: 0 auto;
+        }
+        .status { 
+            padding: 15px; 
+            margin: 15px 0; 
+            border-radius: 8px; 
+            border-left: 4px solid;
+        }
+        .success { 
+            background: #d4edda; 
+            color: #155724; 
+            border-color: #28a745;
+        }
+        .error { 
+            background: #f8d7da; 
+            color: #721c24; 
+            border-color: #dc3545;
+        }
+        .info { 
+            background: #d1ecf1; 
+            color: #0c5460; 
+            border-color: #17a2b8;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎙️ Podcast Script Studio</h1>
+    <h2>基本動作確認ページ</h2>
+    
+    <div class="status success">
+        ✅ <strong>サーバー接続確認</strong><br>
+        このページが表示されていれば、Vite開発サーバーは正常に動作しています。
+    </div>
+    
+    <div class="status info">
+        📋 <strong>現在の状況</strong><br>
+        <ul>
+            <li>✅ Vite 開発サーバー起動</li>
+            <li>✅ 静的ファイル配信OK</li>
+            <li>⚠️ React アプリケーション（TypeScriptエラーの可能性）</li>
+            <li>❌ Firebase / Gemini API（未設定）</li>
+        </ul>
+    </div>
+    
+    <div class="status error">
+        🚨 <strong>メインアプリの問題</strong><br>
+        <code>http://172.28.249.73:3001/</code> が404エラーになる原因：
+        <ol>
+            <li>TypeScriptコンパイルエラー</li>
+            <li>Reactアプリの初期化問題</li>
+            <li>依存関係の問題</li>
+        </ol>
+    </div>
+    
+    <h2>🔧 動作テストリンク</h2>
+    <a href="/" class="btn">メインアプリ（React）にアクセス</a>
+    <a href="/test.html" class="btn">静的テストページ</a>
+    
+    <h2>📊 技術情報</h2>
+    <div class="status info">
+        <strong>プロジェクト構成:</strong><br>
+        • React 18 + TypeScript + Vite<br>
+        • Zustand (状態管理)<br>
+        • Tailwind CSS (スタイリング)<br>
+        • Firebase (認証・DB)<br>
+        • Gemini API (AI生成)<br>
+        <br>
+        <strong>ファイル数:</strong> 68ファイル<br>
+        <strong>コード行数:</strong> 4,400+行
+    </div>
+    
+    <h2>📝 解決方法</h2>
+    <ol>
+        <li><strong>TypeScriptエラー修正</strong>: <code>npm run type-check</code> でエラー確認</li>
+        <li><strong>依存関係再インストール</strong>: <code>npm install --force</code></li>
+        <li><strong>キャッシュクリア</strong>: <code>rm -rf node_modules/.vite</code></li>
+        <li><strong>環境変数設定</strong>: 実際のAPIキー設定</li>
+    </ol>
+    
+    <div class="status success">
+        💡 <strong>次のステップ:</strong><br>
+        TypeScriptエラーを修正してReactアプリを正常に起動させる
+    </div>
+</body>
+</html>

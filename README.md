@@ -76,6 +76,34 @@ npm run dev
 
 ブラウザで `http://localhost:3000` を開いてアプリケーションにアクセス。
 
+## 🌐 Vercel デプロイメント
+
+このプロジェクトは Vercel での本番デプロイに最適化されています。
+
+### 自動デプロイ（推奨）
+
+1. **Vercel アカウントにログイン**: [vercel.com](https://vercel.com)
+2. **GitHub リポジトリを接続**
+3. **環境変数を設定**:
+   - `VITE_FIREBASE_API_KEY`
+   - `VITE_FIREBASE_AUTH_DOMAIN`
+   - `VITE_FIREBASE_PROJECT_ID`
+   - `VITE_FIREBASE_STORAGE_BUCKET`
+   - `VITE_FIREBASE_MESSAGING_SENDER_ID`
+   - `VITE_FIREBASE_APP_ID`
+   - `VITE_GEMINI_API_KEY`
+4. **自動デプロイ開始**
+
+### 手動デプロイ
+
+```bash
+# Vercel CLI をインストール
+npm install -g vercel
+
+# プロジェクトディレクトリでデプロイ
+vercel --prod
+```
+
 ## 📱 使用方法
 
 ### ステップ1: 初期設定

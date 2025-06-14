@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, ArrowLeft, RotateCcw, CheckCircle } from 'lucide-react';
+import { ArrowLeft, RotateCcw, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { FinalPreview } from './FinalPreview';
 import { useAppStore, useSettingsStore, useGenerationStore } from '@/store';

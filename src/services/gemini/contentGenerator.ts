@@ -1,4 +1,4 @@
-import { CharacterSettings, ContentField } from '@/types';
+import { CharacterSettings } from '@/types';
 import { GeminiAPIService } from './api';
 import { PromptTemplates, PromptUtils } from './prompts';
 

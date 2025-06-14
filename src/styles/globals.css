@@ -38,7 +38,7 @@
   }
   
   .form-textarea {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 resize-vertical;
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400 resize-y;
   }
   
   .form-label {

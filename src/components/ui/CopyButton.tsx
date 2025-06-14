@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
-import { Button, ButtonProps } from './Button';
+import { Button } from './Button';
 
-export interface CopyButtonProps extends Omit<ButtonProps, 'onClick' | 'children'> {
+export interface CopyButtonProps {
   text: string;
   onCopy?: (text: string) => void;
   successMessage?: string;
   children?: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'danger' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+  disabled?: boolean;
 }
 
 const CopyButton: React.FC<CopyButtonProps> = ({

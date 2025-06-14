@@ -67,7 +67,7 @@ export class FirestoreService {
       const q = query(collectionRef, orderBy('createdAt', 'desc'), limit(limitCount));
       const querySnapshot = await getDocs(q);
       
-      return querySnapshot.docs.map(doc => ({
+      return querySnapshot.docs.map((doc: any) => ({
         id: doc.id,
         ...doc.data(),
       }));
@@ -81,7 +81,7 @@ export class FirestoreService {
   async saveData<T>(path: string, data: T): Promise<void> {
     try {
       const pathSegments = path.split('/');
-      const docRef = doc(db, ...pathSegments);
+      const docRef = doc(db, pathSegments.join('/'));
       await setDoc(docRef, {
         ...data,
         updatedAt: Timestamp.now(),
@@ -96,7 +96,7 @@ export class FirestoreService {
   async loadData<T>(path: string): Promise<T | null> {
     try {
       const pathSegments = path.split('/');
-      const docRef = doc(db, ...pathSegments);
+      const docRef = doc(db, pathSegments.join('/'));
       const docSnap = await getDoc(docRef);
       
       if (docSnap.exists()) {

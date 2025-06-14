@@ -4,7 +4,7 @@ import { Button, ErrorAlert } from '@/components/ui';
 import { CharacterForm } from './CharacterForm';
 import { useAppStore, useSettingsStore } from '@/store';
 import { useAuth } from '@/hooks';
-import { validateCharacterSettings, sanitizeCharacterSettings, SUCCESS_MESSAGES } from '@/utils';
+import { SUCCESS_MESSAGES } from '@/utils';
 
 const SettingsStep: React.FC = () => {
   const { goToNextStep, showNotification } = useAppStore();

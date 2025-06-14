@@ -2,7 +2,7 @@ import React from 'react';
 import { FileText } from 'lucide-react';
 import { CopyButton } from '@/components/ui';
 import { CharacterSettings, GeneratedContent } from '@/types';
-import { SUCCESS_MESSAGES } from '@/utils';
+// import { SUCCESS_MESSAGES } from '@/utils';
 import { useAppStore } from '@/store';
 
 interface FinalPreviewProps {
@@ -44,7 +44,7 @@ const FinalPreview: React.FC<FinalPreviewProps> = ({
     return parts.join('\n');
   }, [settings, content.script]);
   
-  const handleCopy = (text: string, type: string) => {
+  const handleCopy = (_text: string, type: string) => {
     showNotification(`${type}をコピーしました！`, 'success');
   };
   

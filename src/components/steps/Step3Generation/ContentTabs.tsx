@@ -49,7 +49,7 @@ const ContentTabs: React.FC<ContentTabsProps> = ({ children }) => {
   
   const getTabClasses = (tabId: ContentField) => {
     const isActive = activeTab === tabId;
-    const status = getTabStatus(tabId);
+    // const status = getTabStatus(tabId);
     
     let baseClasses = 'relative flex-1 flex flex-col items-center p-4 border-b-2 transition-all duration-200 cursor-pointer';
     
